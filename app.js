@@ -171,6 +171,16 @@ function buildGrid(record) {
   gridEl.appendChild(frag);
 }
 
+// Show the place as a distinct tag only when it adds information — i.e. when
+// the caption isn't already the place (or doesn't contain it).
+function displayPlace(caption, place) {
+  if (!place) return '';
+  const c = String(caption || '').toLowerCase().trim();
+  const p = String(place).toLowerCase().trim();
+  if (!p || p === c || c.includes(p) || p.includes(c)) return '';
+  return place;
+}
+
 function createTile(photo, record, idx) {
   const a = document.createElement('a');
   a.className = 'tile';
@@ -181,9 +191,12 @@ function createTile(photo, record, idx) {
   a.setAttribute('target', '_blank');
   a.setAttribute('rel', 'noopener');
 
+  const place = displayPlace(photo.caption, photo.place);
+  if (place) a.setAttribute('data-place', place);
+
   const img = document.createElement('img');
   img.src = photo.thumb || photo.full;
-  img.alt = photo.caption || record.id;
+  img.alt = photo.caption ? (place ? `${photo.caption}, ${place}` : photo.caption) : record.id;
   img.loading = 'lazy';
   img.decoding = 'async';
   a.appendChild(img);
@@ -191,7 +204,16 @@ function createTile(photo, record, idx) {
   if (photo.caption) {
     const cap = document.createElement('span');
     cap.className = 'tile__cap';
-    cap.textContent = photo.caption;
+    const title = document.createElement('span');
+    title.className = 'tile__cap-title';
+    title.textContent = photo.caption;
+    cap.appendChild(title);
+    if (place) {
+      const pl = document.createElement('span');
+      pl.className = 'tile__cap-place';
+      pl.textContent = place;
+      cap.appendChild(pl);
+    }
     a.appendChild(cap);
   }
 
@@ -223,19 +245,26 @@ function layoutAll() {
   sectionRecords.forEach(buildGrid);
 }
 
-// Relayout only when the viewport WIDTH actually changes (ignore mobile
-// URL-bar height jitter), debounced.
-let lastW = window.innerWidth;
+// Build the grids, and rebuild whenever the available content WIDTH changes.
+// A ResizeObserver fires on first observe too, so the gallery always renders
+// regardless of load-event / web-font timing; we guard on width so mobile
+// URL-bar height jitter (which changes only height) never forces a reflow.
+const measureEl = document.querySelector('.page') || document.body;
+let lastW = -1;
 let resizeTimer = null;
-window.addEventListener('resize', () => {
+function scheduleLayout() {
+  const w = measureEl.clientWidth || window.innerWidth;
+  if (w === lastW) return;
+  lastW = w;
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    const w = window.innerWidth;
-    if (w !== lastW) { lastW = w; layoutAll(); }
-  }, 160);
-}, { passive: true });
-
-// First layout: wait a frame so clientWidth is correct, and relayout after fonts load
+  resizeTimer = setTimeout(layoutAll, 120);
+}
+if ('ResizeObserver' in window) {
+  new ResizeObserver(scheduleLayout).observe(measureEl);
+} else {
+  window.addEventListener('resize', scheduleLayout, { passive: true });
+}
+// Belt-and-suspenders for the very first paint and the web-font swap.
 requestAnimationFrame(layoutAll);
 if (document.fonts && document.fonts.ready) {
   document.fonts.ready.then(() => requestAnimationFrame(layoutAll));
@@ -265,7 +294,22 @@ sectionRecords.forEach((record) => {
       onInit: (el, pswp) => {
         const update = () => {
           const curr = pswp.currSlide && pswp.currSlide.data && pswp.currSlide.data.element;
-          el.textContent = curr ? (curr.getAttribute('data-caption') || '') : '';
+          el.innerHTML = '';
+          if (!curr) return;
+          const cap = curr.getAttribute('data-caption') || '';
+          const place = curr.getAttribute('data-place') || '';
+          if (cap) {
+            const t = document.createElement('span');
+            t.className = 'pswp-cap-title';
+            t.textContent = cap;
+            el.appendChild(t);
+          }
+          if (place) {
+            const p = document.createElement('span');
+            p.className = 'pswp-cap-place';
+            p.textContent = place;
+            el.appendChild(p);
+          }
         };
         pswp.on('change', update);
         update();

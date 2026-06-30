@@ -13,140 +13,160 @@ window.GALLERY = {
           "thumb": "gallery/city/thumb/abu-dhabi.jpg",
           "caption": "Abu Dhabi",
           "w": 1365,
-          "h": 2048
+          "h": 2048,
+          "place": "Abu Dhabi"
         },
         {
           "full": "gallery/city/amsterdam.jpg",
           "thumb": "gallery/city/thumb/amsterdam.jpg",
           "caption": "Amsterdam",
           "w": 2400,
-          "h": 1800
+          "h": 1800,
+          "place": "Amsterdam"
         },
         {
           "full": "gallery/city/bordeaux.jpg",
           "thumb": "gallery/city/thumb/bordeaux.jpg",
           "caption": "Bordeaux",
           "w": 1620,
-          "h": 1080
+          "h": 1080,
+          "place": "Bordeaux"
         },
         {
           "full": "gallery/city/boston.jpg",
           "thumb": "gallery/city/thumb/boston.jpg",
           "caption": "Boston",
           "w": 2048,
-          "h": 1366
+          "h": 1366,
+          "place": "Boston"
         },
         {
           "full": "gallery/city/chicago.jpg",
           "thumb": "gallery/city/thumb/chicago.jpg",
           "caption": "Chicago",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Chicago"
         },
         {
           "full": "gallery/city/cincinnati.jpg",
           "thumb": "gallery/city/thumb/cincinnati.jpg",
           "caption": "Cincinnati",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Cincinnati"
         },
         {
           "full": "gallery/city/cleveland.jpg",
           "thumb": "gallery/city/thumb/cleveland.jpg",
           "caption": "Cleveland",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Cleveland"
         },
         {
           "full": "gallery/city/columbus.jpg",
           "thumb": "gallery/city/thumb/columbus.jpg",
           "caption": "Columbus",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Columbus"
         },
         {
           "full": "gallery/city/hong-kong.jpg",
           "thumb": "gallery/city/thumb/hong-kong.jpg",
           "caption": "Hong Kong",
           "w": 2048,
-          "h": 1152
+          "h": 1152,
+          "place": "Hong Kong"
         },
         {
           "full": "gallery/city/indianapolis.jpg",
           "thumb": "gallery/city/thumb/indianapolis.jpg",
           "caption": "Indianapolis",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Indianapolis"
         },
         {
           "full": "gallery/city/philadelphia.jpg",
           "thumb": "gallery/city/thumb/philadelphia.jpg",
           "caption": "Philadelphia",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Philadelphia"
         },
         {
           "full": "gallery/city/pittsburg.jpg",
           "thumb": "gallery/city/thumb/pittsburg.jpg",
-          "caption": "Pittsburg",
+          "caption": "Pittsburgh",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Pittsburgh"
         },
         {
           "full": "gallery/city/rhode-island.jpg",
           "thumb": "gallery/city/thumb/rhode-island.jpg",
           "caption": "Rhode Island",
           "w": 2048,
-          "h": 1366
+          "h": 1366,
+          "place": "Rhode Island"
         },
         {
           "full": "gallery/city/san-francisco.jpg",
           "thumb": "gallery/city/thumb/san-francisco.jpg",
           "caption": "San Francisco",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "San Francisco"
         },
         {
           "full": "gallery/city/seattle.jpg",
           "thumb": "gallery/city/thumb/seattle.jpg",
           "caption": "Seattle",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Seattle"
         },
         {
           "full": "gallery/city/shanghai.jpg",
           "thumb": "gallery/city/thumb/shanghai.jpg",
           "caption": "Shanghai",
           "w": 2048,
-          "h": 1152
+          "h": 1152,
+          "place": "Shanghai"
         },
         {
           "full": "gallery/city/suzhou.jpg",
           "thumb": "gallery/city/thumb/suzhou.jpg",
           "caption": "Suzhou",
           "w": 2048,
-          "h": 1152
+          "h": 1152,
+          "place": "Suzhou"
         },
         {
           "full": "gallery/city/tokyo.jpg",
           "thumb": "gallery/city/thumb/tokyo.jpg",
           "caption": "Tokyo",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Tokyo"
         },
         {
           "full": "gallery/city/ulanqab.jpg",
           "thumb": "gallery/city/thumb/ulanqab.jpg",
           "caption": "Ulanqab",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Ulanqab"
         },
         {
           "full": "gallery/city/washington-dc.jpg",
           "thumb": "gallery/city/thumb/washington-dc.jpg",
           "caption": "Washington DC",
           "w": 1365,
-          "h": 2048
+          "h": 2048,
+          "place": "Washington, D.C."
         }
       ],
       "count": 20,
@@ -155,7 +175,8 @@ window.GALLERY = {
         "thumb": "gallery/city/thumb/abu-dhabi.jpg",
         "caption": "Abu Dhabi",
         "w": 1365,
-        "h": 2048
+        "h": 2048,
+        "place": "Abu Dhabi"
       }
     },
     {
@@ -166,53 +187,60 @@ window.GALLERY = {
         {
           "full": "gallery/architecture/mit-boston.jpg",
           "thumb": "gallery/architecture/thumb/mit-boston.jpg",
-          "caption": "MIT, Boston",
+          "caption": "MIT",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Boston"
         },
         {
           "full": "gallery/architecture/sheikh-zayed-grand-mosque-abu-dhabi.jpg",
           "thumb": "gallery/architecture/thumb/sheikh-zayed-grand-mosque-abu-dhabi.jpg",
-          "caption": "Sheikh Zayed Grand Mosque, Abu Dhabi",
+          "caption": "Sheikh Zayed Grand Mosque",
           "w": 2048,
-          "h": 1152
+          "h": 1152,
+          "place": "Abu Dhabi"
         },
         {
           "full": "gallery/architecture/tower-in-the-sumida-tokyo.jpg",
           "thumb": "gallery/architecture/thumb/tower-in-the-sumida-tokyo.jpg",
-          "caption": "Tower in the Sumida, Tokyo",
+          "caption": "Tower in the Sumida",
           "w": 1365,
-          "h": 2048
+          "h": 2048,
+          "place": "Tokyo"
         },
         {
           "full": "gallery/architecture/united-states-capitol-dc.jpg",
           "thumb": "gallery/architecture/thumb/united-states-capitol-dc.jpg",
-          "caption": "United States Capitol, DC",
+          "caption": "United States Capitol",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Washington, D.C."
         },
         {
           "full": "gallery/architecture/white-house-dc.jpg",
           "thumb": "gallery/architecture/thumb/white-house-dc.jpg",
-          "caption": "White House, DC",
+          "caption": "White House",
           "w": 2048,
-          "h": 1366
+          "h": 1366,
+          "place": "Washington, D.C."
         },
         {
           "full": "gallery/architecture/windmill-xiangyag.jpg",
           "thumb": "gallery/architecture/thumb/windmill-xiangyag.jpg",
-          "caption": "Windmill, Xiangyag",
+          "caption": "Windmill",
           "w": 2048,
-          "h": 1152
+          "h": 1152,
+          "place": "Xiangyang"
         }
       ],
       "count": 6,
       "cover": {
         "full": "gallery/architecture/mit-boston.jpg",
         "thumb": "gallery/architecture/thumb/mit-boston.jpg",
-        "caption": "MIT, Boston",
+        "caption": "MIT",
         "w": 1366,
-        "h": 2048
+        "h": 2048,
+        "place": "Boston"
       }
     },
     {
@@ -223,39 +251,44 @@ window.GALLERY = {
         {
           "full": "gallery/church/abrahamic-family-house-abu-dhabi.jpg",
           "thumb": "gallery/church/thumb/abrahamic-family-house-abu-dhabi.jpg",
-          "caption": "Abrahamic Family House, Abu Dhabi",
+          "caption": "Abrahamic Family House",
           "w": 1080,
-          "h": 1619
+          "h": 1619,
+          "place": "Abu Dhabi"
         },
         {
           "full": "gallery/church/catholic-qingdao-catholic-church-qingdao.jpg",
           "thumb": "gallery/church/thumb/catholic-qingdao-catholic-church-qingdao.jpg",
-          "caption": "Catholic Qingdao Catholic Church, Qingdao",
+          "caption": "Catholic Qingdao Catholic Church",
           "w": 1600,
-          "h": 2400
+          "h": 2400,
+          "place": "Qingdao"
         },
         {
           "full": "gallery/church/chapel-of-the-transfiguration-grand-teton-national-park.jpg",
           "thumb": "gallery/church/thumb/chapel-of-the-transfiguration-grand-teton-national-park.jpg",
-          "caption": "Chapel of the Transfiguration, Grand Teton National Park",
+          "caption": "Chapel of the Transfiguration",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Grand Teton National Park"
         },
         {
           "full": "gallery/church/saint-ignatius-cathedral-shanghai.jpg",
           "thumb": "gallery/church/thumb/saint-ignatius-cathedral-shanghai.jpg",
-          "caption": "Saint Ignatius Cathedral, Shanghai",
+          "caption": "Saint Ignatius Cathedral",
           "w": 1600,
-          "h": 2400
+          "h": 2400,
+          "place": "Shanghai"
         }
       ],
       "count": 4,
       "cover": {
         "full": "gallery/church/abrahamic-family-house-abu-dhabi.jpg",
         "thumb": "gallery/church/thumb/abrahamic-family-house-abu-dhabi.jpg",
-        "caption": "Abrahamic Family House, Abu Dhabi",
+        "caption": "Abrahamic Family House",
         "w": 1080,
-        "h": 1619
+        "h": 1619,
+        "place": "Abu Dhabi"
       }
     },
     {
@@ -266,53 +299,58 @@ window.GALLERY = {
         {
           "full": "gallery/museum/louvre-abu-dhabi-1.jpg",
           "thumb": "gallery/museum/thumb/louvre-abu-dhabi-1.jpg",
-          "caption": "Louvre Abu Dhabi-1",
+          "caption": "Louvre Abu Dhabi",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Abu Dhabi"
         },
         {
           "full": "gallery/museum/louvre-abu-dhabi-2.jpg",
           "thumb": "gallery/museum/thumb/louvre-abu-dhabi-2.jpg",
-          "caption": "Louvre Abu Dhabi-2",
+          "caption": "Louvre Abu Dhabi",
           "w": 2048,
-          "h": 1366
+          "h": 1366,
+          "place": "Abu Dhabi"
         },
         {
           "full": "gallery/museum/musee-des-beaux-arts-1.jpg",
           "thumb": "gallery/museum/thumb/musee-des-beaux-arts-1.jpg",
-          "caption": "Musée des Beaux-Arts-1",
+          "caption": "Musée des Beaux-Arts",
           "w": 1800,
           "h": 2400
         },
         {
           "full": "gallery/museum/musee-des-beaux-arts-2.jpg",
           "thumb": "gallery/museum/thumb/musee-des-beaux-arts-2.jpg",
-          "caption": "Musée des Beaux-Arts-2",
+          "caption": "Musée des Beaux-Arts",
           "w": 2400,
           "h": 1800
         },
         {
           "full": "gallery/museum/the-cleveland-museum-of-art-1.jpg",
           "thumb": "gallery/museum/thumb/the-cleveland-museum-of-art-1.jpg",
-          "caption": "The Cleveland Museum of Art-1",
+          "caption": "The Cleveland Museum of Art",
           "w": 1600,
-          "h": 2400
+          "h": 2400,
+          "place": "Cleveland"
         },
         {
           "full": "gallery/museum/the-cleveland-museum-of-art-2.jpg",
           "thumb": "gallery/museum/thumb/the-cleveland-museum-of-art-2.jpg",
-          "caption": "The Cleveland Museum of Art-2",
+          "caption": "The Cleveland Museum of Art",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Cleveland"
         }
       ],
       "count": 6,
       "cover": {
         "full": "gallery/museum/louvre-abu-dhabi-1.jpg",
         "thumb": "gallery/museum/thumb/louvre-abu-dhabi-1.jpg",
-        "caption": "Louvre Abu Dhabi-1",
+        "caption": "Louvre Abu Dhabi",
         "w": 1366,
-        "h": 2048
+        "h": 2048,
+        "place": "Abu Dhabi"
       }
     },
     {
@@ -323,32 +361,36 @@ window.GALLERY = {
         {
           "full": "gallery/national-park/bandlands-national-park.jpg",
           "thumb": "gallery/national-park/thumb/bandlands-national-park.jpg",
-          "caption": "Bandlands National Park",
+          "caption": "Badlands National Park",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Badlands National Park"
         },
         {
           "full": "gallery/national-park/grand-teton-national-park.jpg",
           "thumb": "gallery/national-park/thumb/grand-teton-national-park.jpg",
           "caption": "Grand Teton National Park",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Grand Teton National Park"
         },
         {
           "full": "gallery/national-park/shenandoah-national-park.jpg",
           "thumb": "gallery/national-park/thumb/shenandoah-national-park.jpg",
           "caption": "Shenandoah National Park",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Shenandoah National Park"
         }
       ],
       "count": 3,
       "cover": {
         "full": "gallery/national-park/bandlands-national-park.jpg",
         "thumb": "gallery/national-park/thumb/bandlands-national-park.jpg",
-        "caption": "Bandlands National Park",
+        "caption": "Badlands National Park",
         "w": 2400,
-        "h": 1600
+        "h": 1600,
+        "place": "Badlands National Park"
       }
     },
     {
@@ -361,21 +403,24 @@ window.GALLERY = {
           "thumb": "gallery/sea-lake/thumb/abu-dhabi.jpg",
           "caption": "Abu Dhabi",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Abu Dhabi"
         },
         {
           "full": "gallery/sea-lake/taihu-lake-suzhou.jpg",
           "thumb": "gallery/sea-lake/thumb/taihu-lake-suzhou.jpg",
-          "caption": "Taihu Lake, Suzhou",
+          "caption": "Taihu Lake",
           "w": 2048,
-          "h": 1152
+          "h": 1152,
+          "place": "Suzhou"
         },
         {
           "full": "gallery/sea-lake/xiangyang.jpg",
           "thumb": "gallery/sea-lake/thumb/xiangyang.jpg",
           "caption": "Xiangyang",
           "w": 2048,
-          "h": 820
+          "h": 820,
+          "place": "Xiangyang"
         }
       ],
       "count": 3,
@@ -384,7 +429,8 @@ window.GALLERY = {
         "thumb": "gallery/sea-lake/thumb/abu-dhabi.jpg",
         "caption": "Abu Dhabi",
         "w": 1366,
-        "h": 2048
+        "h": 2048,
+        "place": "Abu Dhabi"
       }
     },
     {
@@ -452,25 +498,28 @@ window.GALLERY = {
         {
           "full": "gallery/firework/alexandria-va-2025-12-31.jpg",
           "thumb": "gallery/firework/thumb/alexandria-va-2025-12-31.jpg",
-          "caption": "Alexandria, VA, 2025.12.31",
+          "caption": "Alexandria, VA",
           "w": 1079,
-          "h": 1916
+          "h": 1916,
+          "place": "Alexandria"
         },
         {
           "full": "gallery/firework/puyang-2025-01-31jpg.jpg",
           "thumb": "gallery/firework/thumb/puyang-2025-01-31jpg.jpg",
-          "caption": "Puyang, 2025.01.31",
+          "caption": "Puyang",
           "w": 2048,
-          "h": 2048
+          "h": 2048,
+          "place": "Puyang"
         }
       ],
       "count": 2,
       "cover": {
         "full": "gallery/firework/alexandria-va-2025-12-31.jpg",
         "thumb": "gallery/firework/thumb/alexandria-va-2025-12-31.jpg",
-        "caption": "Alexandria, VA, 2025.12.31",
+        "caption": "Alexandria, VA",
         "w": 1079,
-        "h": 1916
+        "h": 1916,
+        "place": "Alexandria"
       }
     },
     {
@@ -481,46 +530,52 @@ window.GALLERY = {
         {
           "full": "gallery/flower/lincoln-park-conservatory-chicago-1.jpg",
           "thumb": "gallery/flower/thumb/lincoln-park-conservatory-chicago-1.jpg",
-          "caption": "Lincoln Park Conservatory, Chicago-1",
+          "caption": "Lincoln Park Conservatory",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Chicago"
         },
         {
           "full": "gallery/flower/lincoln-park-conservatory-chicago-2.jpg",
           "thumb": "gallery/flower/thumb/lincoln-park-conservatory-chicago-2.jpg",
-          "caption": "Lincoln Park Conservatory, Chicago-2",
+          "caption": "Lincoln Park Conservatory",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Chicago"
         },
         {
           "full": "gallery/flower/uiuc-champaign.jpg",
           "thumb": "gallery/flower/thumb/uiuc-champaign.jpg",
-          "caption": "UIUC, Champaign",
+          "caption": "UIUC",
           "w": 1600,
-          "h": 2400
+          "h": 2400,
+          "place": "Champaign"
         },
         {
           "full": "gallery/flower/united-states-botanic-garden-dc-1.jpg",
           "thumb": "gallery/flower/thumb/united-states-botanic-garden-dc-1.jpg",
-          "caption": "United States Botanic Garden, DC-1",
+          "caption": "United States Botanic Garden",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Washington, D.C."
         },
         {
           "full": "gallery/flower/united-states-botanic-garden-dc-2.jpg",
           "thumb": "gallery/flower/thumb/united-states-botanic-garden-dc-2.jpg",
-          "caption": "United States Botanic Garden, DC-2",
+          "caption": "United States Botanic Garden",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Washington, D.C."
         }
       ],
       "count": 5,
       "cover": {
         "full": "gallery/flower/lincoln-park-conservatory-chicago-1.jpg",
         "thumb": "gallery/flower/thumb/lincoln-park-conservatory-chicago-1.jpg",
-        "caption": "Lincoln Park Conservatory, Chicago-1",
+        "caption": "Lincoln Park Conservatory",
         "w": 2400,
-        "h": 1350
+        "h": 1350,
+        "place": "Chicago"
       }
     },
     {
@@ -531,21 +586,21 @@ window.GALLERY = {
         {
           "full": "gallery/animal/squirrel-1.jpg",
           "thumb": "gallery/animal/thumb/squirrel-1.jpg",
-          "caption": "Squirrel-1",
+          "caption": "Squirrel",
           "w": 1954,
           "h": 1099
         },
         {
           "full": "gallery/animal/squirrel-2.jpg",
           "thumb": "gallery/animal/thumb/squirrel-2.jpg",
-          "caption": "Squirrel-2",
+          "caption": "Squirrel",
           "w": 2400,
           "h": 1350
         },
         {
           "full": "gallery/animal/squirrel-3.jpg",
           "thumb": "gallery/animal/thumb/squirrel-3.jpg",
-          "caption": "Squirrel-3",
+          "caption": "Squirrel",
           "w": 2400,
           "h": 1350
         }
@@ -554,7 +609,7 @@ window.GALLERY = {
       "cover": {
         "full": "gallery/animal/squirrel-1.jpg",
         "thumb": "gallery/animal/thumb/squirrel-1.jpg",
-        "caption": "Squirrel-1",
+        "caption": "Squirrel",
         "w": 1954,
         "h": 1099
       }
@@ -677,7 +732,8 @@ window.GALLERY = {
           "thumb": "gallery/school/thumb/mit.jpg",
           "caption": "MIT",
           "w": 2048,
-          "h": 1366
+          "h": 1366,
+          "place": "Boston"
         },
         {
           "full": "gallery/school/stanford.jpg",
@@ -691,28 +747,32 @@ window.GALLERY = {
           "thumb": "gallery/school/thumb/ucb.jpg",
           "caption": "UCB",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Berkeley"
         },
         {
           "full": "gallery/school/uiuc.jpg",
           "thumb": "gallery/school/thumb/uiuc.jpg",
           "caption": "UIUC",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Champaign"
         },
         {
           "full": "gallery/school/umd.jpg",
           "thumb": "gallery/school/thumb/umd.jpg",
           "caption": "UMD",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Maryland"
         },
         {
           "full": "gallery/school/uw.jpg",
           "thumb": "gallery/school/thumb/uw.jpg",
           "caption": "UW",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Seattle"
         }
       ],
       "count": 6,
@@ -721,7 +781,8 @@ window.GALLERY = {
         "thumb": "gallery/school/thumb/mit.jpg",
         "caption": "MIT",
         "w": 2048,
-        "h": 1366
+        "h": 1366,
+        "place": "Boston"
       }
     },
     {
@@ -732,109 +793,124 @@ window.GALLERY = {
         {
           "full": "gallery/graduation/thu-1.jpg",
           "thumb": "gallery/graduation/thumb/thu-1.jpg",
-          "caption": "THU-1",
+          "caption": "THU",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Beijing"
         },
         {
           "full": "gallery/graduation/thu-10.jpg",
           "thumb": "gallery/graduation/thumb/thu-10.jpg",
-          "caption": "THU-10",
+          "caption": "THU",
           "w": 1440,
-          "h": 960
+          "h": 960,
+          "place": "Beijing"
         },
         {
           "full": "gallery/graduation/thu-11.jpg",
           "thumb": "gallery/graduation/thumb/thu-11.jpg",
-          "caption": "THU-11",
+          "caption": "THU",
           "w": 1440,
-          "h": 960
+          "h": 960,
+          "place": "Beijing"
         },
         {
           "full": "gallery/graduation/thu-2.jpg",
           "thumb": "gallery/graduation/thumb/thu-2.jpg",
-          "caption": "THU-2",
+          "caption": "THU",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Beijing"
         },
         {
           "full": "gallery/graduation/thu-3.jpg",
           "thumb": "gallery/graduation/thumb/thu-3.jpg",
-          "caption": "THU-3",
+          "caption": "THU",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Beijing"
         },
         {
           "full": "gallery/graduation/thu-4.jpg",
           "thumb": "gallery/graduation/thumb/thu-4.jpg",
-          "caption": "THU-4",
+          "caption": "THU",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Beijing"
         },
         {
           "full": "gallery/graduation/thu-5.jpg",
           "thumb": "gallery/graduation/thumb/thu-5.jpg",
-          "caption": "THU-5",
+          "caption": "THU",
           "w": 1350,
-          "h": 2400
+          "h": 2400,
+          "place": "Beijing"
         },
         {
           "full": "gallery/graduation/thu-6.jpg",
           "thumb": "gallery/graduation/thumb/thu-6.jpg",
-          "caption": "THU-6",
+          "caption": "THU",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Beijing"
         },
         {
           "full": "gallery/graduation/thu-7.jpg",
           "thumb": "gallery/graduation/thumb/thu-7.jpg",
-          "caption": "THU-7",
+          "caption": "THU",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Beijing"
         },
         {
           "full": "gallery/graduation/thu-8.jpg",
           "thumb": "gallery/graduation/thumb/thu-8.jpg",
-          "caption": "THU-8",
+          "caption": "THU",
           "w": 1080,
-          "h": 1441
+          "h": 1441,
+          "place": "Beijing"
         },
         {
           "full": "gallery/graduation/thu-9.jpg",
           "thumb": "gallery/graduation/thumb/thu-9.jpg",
-          "caption": "THU-9",
+          "caption": "THU",
           "w": 1080,
-          "h": 1620
+          "h": 1620,
+          "place": "Beijing"
         },
         {
           "full": "gallery/graduation/uiuc-1.jpg",
           "thumb": "gallery/graduation/thumb/uiuc-1.jpg",
-          "caption": "UIUC-1",
+          "caption": "UIUC",
           "w": 1600,
-          "h": 2400
+          "h": 2400,
+          "place": "Champaign"
         },
         {
           "full": "gallery/graduation/uiuc-2.jpg",
           "thumb": "gallery/graduation/thumb/uiuc-2.jpg",
-          "caption": "UIUC-2",
+          "caption": "UIUC",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Champaign"
         },
         {
           "full": "gallery/graduation/uiuc-3.jpg",
           "thumb": "gallery/graduation/thumb/uiuc-3.jpg",
-          "caption": "UIUC-3",
+          "caption": "UIUC",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Champaign"
         }
       ],
       "count": 14,
       "cover": {
         "full": "gallery/graduation/thu-1.jpg",
         "thumb": "gallery/graduation/thumb/thu-1.jpg",
-        "caption": "THU-1",
+        "caption": "THU",
         "w": 2400,
-        "h": 1600
+        "h": 1600,
+        "place": "Beijing"
       }
     },
     {
@@ -845,186 +921,212 @@ window.GALLERY = {
         {
           "full": "gallery/portrait/abu-dhabi-1.jpg",
           "thumb": "gallery/portrait/thumb/abu-dhabi-1.jpg",
-          "caption": "Abu Dhabi-1",
+          "caption": "Abu Dhabi",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Abu Dhabi"
         },
         {
           "full": "gallery/portrait/abu-dhabi-2.jpg",
           "thumb": "gallery/portrait/thumb/abu-dhabi-2.jpg",
-          "caption": "Abu Dhabi-2",
+          "caption": "Abu Dhabi",
           "w": 1365,
-          "h": 2048
+          "h": 2048,
+          "place": "Abu Dhabi"
         },
         {
           "full": "gallery/portrait/abu-dhabi-3.jpg",
           "thumb": "gallery/portrait/thumb/abu-dhabi-3.jpg",
-          "caption": "Abu Dhabi-3",
+          "caption": "Abu Dhabi",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Abu Dhabi"
         },
         {
           "full": "gallery/portrait/abu-dhabi-4.jpg",
           "thumb": "gallery/portrait/thumb/abu-dhabi-4.jpg",
-          "caption": "Abu Dhabi-4",
+          "caption": "Abu Dhabi",
           "w": 1365,
-          "h": 2048
+          "h": 2048,
+          "place": "Abu Dhabi"
         },
         {
           "full": "gallery/portrait/cleveland-1.jpg",
           "thumb": "gallery/portrait/thumb/cleveland-1.jpg",
-          "caption": "Cleveland-1",
+          "caption": "Cleveland",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Cleveland"
         },
         {
           "full": "gallery/portrait/cleveland-2.jpg",
           "thumb": "gallery/portrait/thumb/cleveland-2.jpg",
-          "caption": "Cleveland-2",
+          "caption": "Cleveland",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Cleveland"
         },
         {
           "full": "gallery/portrait/dc-1.jpg",
           "thumb": "gallery/portrait/thumb/dc-1.jpg",
-          "caption": "DC-1",
+          "caption": "DC",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Washington, D.C."
         },
         {
           "full": "gallery/portrait/dc-2.jpg",
           "thumb": "gallery/portrait/thumb/dc-2.jpg",
-          "caption": "DC-2",
+          "caption": "DC",
           "w": 1152,
-          "h": 2048
+          "h": 2048,
+          "place": "Washington, D.C."
         },
         {
           "full": "gallery/portrait/dc-3.jpg",
           "thumb": "gallery/portrait/thumb/dc-3.jpg",
-          "caption": "DC-3",
+          "caption": "DC",
           "w": 1365,
-          "h": 2048
+          "h": 2048,
+          "place": "Washington, D.C."
         },
         {
           "full": "gallery/portrait/dc-4.jpg",
           "thumb": "gallery/portrait/thumb/dc-4.jpg",
-          "caption": "DC-4",
+          "caption": "DC",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Washington, D.C."
         },
         {
           "full": "gallery/portrait/hong-kong.jpg",
           "thumb": "gallery/portrait/thumb/hong-kong.jpg",
           "caption": "Hong Kong",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Hong Kong"
         },
         {
           "full": "gallery/portrait/ny-1.jpg",
           "thumb": "gallery/portrait/thumb/ny-1.jpg",
-          "caption": "NY-1",
+          "caption": "NY",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "New York"
         },
         {
           "full": "gallery/portrait/ny-2.jpg",
           "thumb": "gallery/portrait/thumb/ny-2.jpg",
-          "caption": "NY-2",
+          "caption": "NY",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "New York"
         },
         {
           "full": "gallery/portrait/seattle-1.jpg",
           "thumb": "gallery/portrait/thumb/seattle-1.jpg",
-          "caption": "Seattle-1",
+          "caption": "Seattle",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Seattle"
         },
         {
           "full": "gallery/portrait/seattle-2.jpg",
           "thumb": "gallery/portrait/thumb/seattle-2.jpg",
-          "caption": "Seattle-2",
+          "caption": "Seattle",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Seattle"
         },
         {
           "full": "gallery/portrait/shenandoah-national-park.jpg",
           "thumb": "gallery/portrait/thumb/shenandoah-national-park.jpg",
           "caption": "Shenandoah National Park",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Shenandoah National Park"
         },
         {
           "full": "gallery/portrait/uiuc-1.jpg",
           "thumb": "gallery/portrait/thumb/uiuc-1.jpg",
-          "caption": "UIUC-1",
+          "caption": "UIUC",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Champaign"
         },
         {
           "full": "gallery/portrait/uiuc-2.jpg",
           "thumb": "gallery/portrait/thumb/uiuc-2.jpg",
-          "caption": "UIUC-2",
+          "caption": "UIUC",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Champaign"
         },
         {
           "full": "gallery/portrait/uiuc-3.jpg",
           "thumb": "gallery/portrait/thumb/uiuc-3.jpg",
-          "caption": "UIUC-3",
+          "caption": "UIUC",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Champaign"
         },
         {
           "full": "gallery/portrait/uw.jpg",
           "thumb": "gallery/portrait/thumb/uw.jpg",
           "caption": "UW",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Seattle"
         },
         {
           "full": "gallery/portrait/xiangyang-1.jpg",
           "thumb": "gallery/portrait/thumb/xiangyang-1.jpg",
-          "caption": "Xiangyang-1",
+          "caption": "Xiangyang",
           "w": 2048,
-          "h": 819
+          "h": 819,
+          "place": "Xiangyang"
         },
         {
           "full": "gallery/portrait/xiangyang-2.jpg",
           "thumb": "gallery/portrait/thumb/xiangyang-2.jpg",
-          "caption": "Xiangyang-2",
+          "caption": "Xiangyang",
           "w": 2048,
-          "h": 820
+          "h": 820,
+          "place": "Xiangyang"
         },
         {
           "full": "gallery/portrait/xiangyang-3.jpg",
           "thumb": "gallery/portrait/thumb/xiangyang-3.jpg",
-          "caption": "Xiangyang-3",
+          "caption": "Xiangyang",
           "w": 2048,
-          "h": 819
+          "h": 819,
+          "place": "Xiangyang"
         },
         {
           "full": "gallery/portrait/xiangyang-4.jpg",
           "thumb": "gallery/portrait/thumb/xiangyang-4.jpg",
-          "caption": "Xiangyang-4",
+          "caption": "Xiangyang",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Xiangyang"
         },
         {
           "full": "gallery/portrait/xiangyang-5.jpg",
           "thumb": "gallery/portrait/thumb/xiangyang-5.jpg",
-          "caption": "Xiangyang-5",
+          "caption": "Xiangyang",
           "w": 1971,
-          "h": 1971
+          "h": 1971,
+          "place": "Xiangyang"
         }
       ],
       "count": 25,
       "cover": {
         "full": "gallery/portrait/abu-dhabi-1.jpg",
         "thumb": "gallery/portrait/thumb/abu-dhabi-1.jpg",
-        "caption": "Abu Dhabi-1",
+        "caption": "Abu Dhabi",
         "w": 1366,
-        "h": 2048
+        "h": 2048,
+        "place": "Abu Dhabi"
       }
     },
     {
@@ -1037,56 +1139,64 @@ window.GALLERY = {
           "thumb": "gallery/me/thumb/badlands-national-park.jpg",
           "caption": "Badlands National Park",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Badlands National Park"
         },
         {
           "full": "gallery/me/cleveland.jpg",
           "thumb": "gallery/me/thumb/cleveland.jpg",
           "caption": "Cleveland",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Cleveland"
         },
         {
           "full": "gallery/me/dahongshan.jpg",
           "thumb": "gallery/me/thumb/dahongshan.jpg",
           "caption": "Dahongshan",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Dahongshan"
         },
         {
           "full": "gallery/me/golden-gate-bridge-sf.jpg",
           "thumb": "gallery/me/thumb/golden-gate-bridge-sf.jpg",
-          "caption": "Golden Gate Bridge, SF",
+          "caption": "Golden Gate Bridge",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "San Francisco"
         },
         {
           "full": "gallery/me/grand-teton-national-park.jpg",
           "thumb": "gallery/me/thumb/grand-teton-national-park.jpg",
           "caption": "Grand Teton National Park",
           "w": 640,
-          "h": 360
+          "h": 360,
+          "place": "Grand Teton National Park"
         },
         {
           "full": "gallery/me/inner-mongolia.jpg",
           "thumb": "gallery/me/thumb/inner-mongolia.jpg",
           "caption": "Inner Mongolia",
           "w": 1600,
-          "h": 2400
+          "h": 2400,
+          "place": "Inner Mongolia"
         },
         {
           "full": "gallery/me/mit.jpg",
           "thumb": "gallery/me/thumb/mit.jpg",
           "caption": "MIT",
           "w": 1365,
-          "h": 2048
+          "h": 2048,
+          "place": "Boston"
         },
         {
           "full": "gallery/me/maryland.jpg",
           "thumb": "gallery/me/thumb/maryland.jpg",
           "caption": "Maryland",
           "w": 1280,
-          "h": 1920
+          "h": 1920,
+          "place": "Maryland"
         },
         {
           "full": "gallery/me/my-edc.jpg",
@@ -1100,56 +1210,64 @@ window.GALLERY = {
           "thumb": "gallery/me/thumb/pittsburgh.jpg",
           "caption": "Pittsburgh",
           "w": 2400,
-          "h": 1600
+          "h": 1600,
+          "place": "Pittsburgh"
         },
         {
           "full": "gallery/me/sausalito-ca.jpg",
           "thumb": "gallery/me/thumb/sausalito-ca.jpg",
           "caption": "Sausalito, CA",
           "w": 2400,
-          "h": 1021
+          "h": 1021,
+          "place": "Sausalito"
         },
         {
           "full": "gallery/me/shenandoah-national-park.jpg",
           "thumb": "gallery/me/thumb/shenandoah-national-park.jpg",
           "caption": "Shenandoah National Park",
           "w": 1366,
-          "h": 2048
+          "h": 2048,
+          "place": "Shenandoah National Park"
         },
         {
           "full": "gallery/me/space-needle-seattle.jpg",
           "thumb": "gallery/me/thumb/space-needle-seattle.jpg",
-          "caption": "Space Needle, Seattle",
+          "caption": "Space Needle",
           "w": 2400,
-          "h": 1350
+          "h": 1350,
+          "place": "Seattle"
         },
         {
           "full": "gallery/me/uiuc-1.jpg",
           "thumb": "gallery/me/thumb/uiuc-1.jpg",
-          "caption": "UIUC-1",
+          "caption": "UIUC",
           "w": 1920,
-          "h": 1080
+          "h": 1080,
+          "place": "Champaign"
         },
         {
           "full": "gallery/me/uiuc-2.jpg",
           "thumb": "gallery/me/thumb/uiuc-2.jpg",
-          "caption": "UIUC-2",
+          "caption": "UIUC",
           "w": 1707,
-          "h": 1280
+          "h": 1280,
+          "place": "Champaign"
         },
         {
           "full": "gallery/me/uiuc-3.jpg",
           "thumb": "gallery/me/thumb/uiuc-3.jpg",
-          "caption": "UIUC-3",
+          "caption": "UIUC",
           "w": 1440,
-          "h": 1080
+          "h": 1080,
+          "place": "Champaign"
         },
         {
           "full": "gallery/me/umd.jpg",
           "thumb": "gallery/me/thumb/umd.jpg",
           "caption": "UMD",
           "w": 2048,
-          "h": 1366
+          "h": 1366,
+          "place": "Maryland"
         }
       ],
       "count": 17,
@@ -1158,7 +1276,8 @@ window.GALLERY = {
         "thumb": "gallery/me/thumb/badlands-national-park.jpg",
         "caption": "Badlands National Park",
         "w": 2400,
-        "h": 1600
+        "h": 1600,
+        "place": "Badlands National Park"
       }
     }
   ]

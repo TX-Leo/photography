@@ -374,18 +374,26 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 .tile__cap {
   position: absolute; left: 0; right: 0; bottom: 0;
-  padding: 30px 14px 12px;
-  background: linear-gradient(to top, rgba(7,7,8,.82), rgba(7,7,8,0));
-  color: var(--ink);
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 32px 14px 12px;
+  background: linear-gradient(to top, rgba(7,7,8,.85), rgba(7,7,8,0));
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .45s var(--ease), transform .45s var(--ease);
+  pointer-events: none;
+}
+.tile__cap-title {
   font-family: var(--serif);
   font-style: italic;
   font-size: 16px;
   line-height: 1.2;
   letter-spacing: .01em;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity .45s var(--ease), transform .45s var(--ease);
-  pointer-events: none;
+  color: var(--ink);
+}
+.tile__cap-place {
+  font: 500 9.5px/1 var(--sans);
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--accent);
 }
 .tile:hover .tile__cap,
 .tile:focus-visible .tile__cap { opacity: 1; transform: none; }
@@ -439,16 +447,21 @@ ul { list-style: none; margin: 0; padding: 0; }
    ========================================================= */
 .pswp__custom-caption {
   position: absolute; left: 0; right: 0; bottom: 16px;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
   text-align: center;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 17px;
-  color: var(--ink);
-  letter-spacing: .01em;
   pointer-events: none;
   text-shadow: 0 1px 12px rgba(0,0,0,.7);
 }
 .pswp__custom-caption:empty { display: none; }
+.pswp-cap-title {
+  font-family: var(--serif); font-style: italic;
+  font-size: 18px; color: var(--ink); letter-spacing: .01em;
+}
+.pswp-cap-place {
+  font: 500 10px/1 var(--sans);
+  letter-spacing: .24em; text-transform: uppercase;
+  color: var(--accent);
+}
 .pswp { --pswp-bg: #060607; }
 
 /* =========================================================

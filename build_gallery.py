@@ -59,12 +59,86 @@ def slugify(s: str) -> str:
     return s or "x"
 
 
-def caption_from(stem: str) -> str:
+def clean_stem(stem: str) -> str:
     # tidy a few malformed names; keep accents for display
     stem = stem.strip()
     stem = re.sub(r"\.?(jpe?g|png|heic)$", "", stem, flags=re.I)  # stray ext in name
     stem = re.sub(r"\s+", " ", stem)
     return stem.strip()
+
+
+# ---- Place tags -----------------------------------------------------------
+# Canonical place names that may appear in filenames (used to recognise a place
+# and to detect one embedded inside a longer title).
+PLACES = {
+    # United States
+    "Boston", "Chicago", "Cincinnati", "Cleveland", "Columbus", "Indianapolis",
+    "Philadelphia", "Pittsburgh", "Rhode Island", "San Francisco", "Seattle",
+    "Washington, D.C.", "New York", "Champaign", "Maryland", "Sausalito",
+    "Alexandria", "Berkeley", "Grand Teton National Park",
+    "Shenandoah National Park", "Badlands National Park",
+    # China
+    "Shanghai", "Suzhou", "Hong Kong", "Ulanqab", "Qingdao", "Xiangyang",
+    "Dahongshan", "Inner Mongolia", "Puyang", "Beijing",
+    # elsewhere
+    "Abu Dhabi", "Tokyo", "Amsterdam", "Bordeaux",
+}
+# token (as written in a filename) -> canonical place
+ALIASES = {
+    "DC": "Washington, D.C.", "Washington DC": "Washington, D.C.",
+    "NY": "New York", "SF": "San Francisco", "CA": "California", "VA": "Virginia",
+    "Pittsburg": "Pittsburgh",                 # spelling
+    "Bandlands National Park": "Badlands National Park",  # spelling
+    "Xiangyag": "Xiangyang",                   # spelling
+    "UIUC": "Champaign", "UMD": "Maryland", "UW": "Seattle", "UCB": "Berkeley",
+    "MIT": "Boston", "THU": "Beijing",         # campus -> city
+}
+US_STATES = {"VA", "CA"}
+# spelling fixes applied to the displayed caption itself
+SPELLING = {"Bandlands": "Badlands", "Pittsburg": "Pittsburgh", "Xiangyag": "Xiangyang"}
+DATE_RE = re.compile(r"\b20\d{2}[.\-/]\d{1,2}(?:[.\-/]\d{1,2})?")
+
+
+def fix_spelling(s: str) -> str:
+    for wrong, right in SPELLING.items():
+        s = re.sub(r"\b" + re.escape(wrong) + r"\b", right, s)
+    return s
+
+
+def canon_place(token: str):
+    t = token.strip()
+    if t in ALIASES:
+        return ALIASES[t]
+    if t in PLACES:
+        return t
+    return None
+
+
+def derive_caption_place(stem: str):
+    """Return (caption, place|None) from a cleaned filename stem."""
+    s = clean_stem(stem)
+    s = DATE_RE.sub("", s).strip().strip(",").strip()   # drop trailing dates
+    s = re.sub(r"-\d+$", "", s).strip()                  # drop series index -N
+
+    parts = [p.strip() for p in s.split(",") if p.strip()]
+    if len(parts) >= 2:
+        last = parts[-1]
+        if last in US_STATES and len(parts) >= 2:        # "Alexandria, VA"
+            caption = ", ".join(parts[-2:])              # keep "City, ST"
+            place = canon_place(parts[-2]) or parts[-2]
+        else:                                            # "Title, Place"
+            caption = ", ".join(parts[:-1])
+            place = canon_place(last) or last
+        return fix_spelling(caption), place
+
+    # single part: a bare place, a campus acronym, or a subject title
+    place = canon_place(s)
+    if place is None:
+        for known in PLACES:                             # place embedded in a title
+            if re.search(r"\b" + re.escape(known) + r"\b", s):
+                place = known
+                break
+    return fix_spelling(s), place
 
 
 def load_image(path: str):
@@ -172,10 +246,14 @@ def main():
                 "full": os.path.join(ROOT, full_rel),
                 "thumb": os.path.join(ROOT, thumb_rel),
             })
-            photos.append({
+            caption, place = derive_caption_place(stem)
+            entry = {
                 "id": jid, "full": full_rel, "thumb": thumb_rel,
-                "caption": caption_from(stem), "w": 0, "h": 0,
-            })
+                "caption": caption, "w": 0, "h": 0,
+            }
+            if place:
+                entry["place"] = place
+            photos.append(entry)
         manifest.append({**{k: cat[k] for k in ("name", "slug", "blurb")}, "photos": photos})
 
     print(f"Processing {len(jobs)} images across {len(manifest)} categories...")
