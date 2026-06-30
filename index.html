@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photography · Zhi (Leo) Wang</title>
+  <meta name="description" content="Photography by Zhi (Leo) Wang — a monograph of cities, architecture, skies, and quiet moments, in 17 series.">
+  <meta name="author" content="Zhi (Leo) Wang">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta property="og:title" content="Photography · Zhi (Leo) Wang">
+  <meta property="og:description" content="A monograph of places seen, light kept, and moments held still — 129 photographs across 17 series.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tx-leo.github.io/photography/">
+  <meta property="og:image" content="https://tx-leo.github.io/photography/gallery/city/chicago.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://tx-leo.github.io/photography/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a0b'/%3E%3Ccircle cx='32' cy='35' r='12' fill='none' stroke='%23c8a978' stroke-width='3'/%3E%3Crect x='21' y='17' width='22' height='7' rx='2.5' fill='%23ece7df'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Editorial Monograph — Zhi (Leo) Wang Photography -->
+<a class="skip-link" href="#contents">Skip to contents</a>
+
+<div class="scroll-progress" aria-hidden="true"><span class="scroll-progress__bar"></span></div>
+
+<!-- Right-rail Table of Contents -->
+<nav class="toc" id="toc" aria-label="Series index">
+  <p class="toc__label">Index</p>
+  <ul class="toc__list" id="toc-list"></ul>
+</nav>
+
+<!-- Mobile index trigger -->
+<button class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-sheet">
+  <span class="toc-toggle__txt">Index</span>
+</button>
+<div class="toc-sheet" id="toc-sheet" aria-hidden="true">
+  <div class="toc-sheet__inner">
+    <div class="toc-sheet__head">
+      <p class="toc-sheet__label">Contents</p>
+      <button class="toc-sheet__close" id="toc-sheet-close" aria-label="Close index">Close</button>
+    </div>
+    <ul class="toc-sheet__list" id="toc-sheet-list"></ul>
+  </div>
+</div>
+
+<main class="page">
+
+  <!-- Hero -->
+  <header class="hero" id="contents">
+    <div class="hero__inner">
+      <p class="hero__kicker">Selected Photographs</p>
+      <h1 class="hero__name">Zhi <span class="hero__paren">(Leo)</span> Wang</h1>
+      <p class="hero__display">Photography</p>
+      <p class="hero__subtitle"><em>A monograph of places seen, light kept, and moments held still.</em></p>
+      <div class="hero__rule" aria-hidden="true"></div>
+      <p class="hero__stats" id="hero-stats"></p>
+    </div>
+    <div class="hero__scroll" aria-hidden="true"><span>Scroll</span></div>
+  </header>
+
+  <!-- Sections injected here -->
+  <div class="sections" id="sections"></div>
+
+  <!-- Footer -->
+  <footer class="footer" id="colophon">
+    <div class="footer__rule" aria-hidden="true"></div>
+    <div class="footer__inner">
+      <p class="footer__name">Zhi (Leo) Wang</p>
+      <ul class="footer__links">
+        <li><a href="https://tx-leo.github.io/" target="_blank" rel="noopener">Portfolio</a></li>
+        <li><a href="https://www.instagram.com/tx.leo.wang/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://x.com/TX_Leo_Wang" target="_blank" rel="noopener">X</a></li>
+      </ul>
+      <p class="footer__legal">© <span id="year">2026</span> · All photographs by the author.</p>
+    </div>
+  </footer>
+
+</main>
+
+<script src="data.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
