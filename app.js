@@ -15,6 +15,7 @@ const pad2 = (n) => String(n).padStart(2, '0');
 const sectionsEl = document.getElementById('sections');
 const tocListEl  = document.getElementById('toc-list');
 const sheetListEl = document.getElementById('toc-sheet-list');
+const heroIndexEl = document.getElementById('hero-index');
 
 // Hero stats
 const heroStats = document.getElementById('hero-stats');
@@ -78,6 +79,16 @@ CATS.forEach((cat, i) => {
   sheetItem.innerHTML = `<span class="n">${idx}</span><span class="t">${escapeHtml(cat.name)}</span>`;
   sheetItem.addEventListener('click', () => { closeSheet(); scrollToSection(id); });
   sheetListEl.appendChild(sheetItem);
+
+  // --- Hero index link ---
+  if (heroIndexEl) {
+    const hi = document.createElement('a');
+    hi.className = 'hero__index-link';
+    hi.href = `#${id}`;
+    hi.innerHTML = `<span class="hero__index-num">${idx}</span><span class="hero__index-name">${escapeHtml(cat.name)}</span>`;
+    hi.addEventListener('click', (e) => { e.preventDefault(); scrollToSection(id); });
+    heroIndexEl.appendChild(hi);
+  }
 });
 
 function escapeHtml(s) {
@@ -87,86 +98,51 @@ function escapeHtml(s) {
 }
 
 /* ---------------------------------------------------------
-   Justified-rows layout
+   Masonry (balanced columns) layout
    --------------------------------------------------------- */
-function targetRowHeight(width) {
-  if (width <= 560) return 168;
-  if (width <= 900) return 232;
-  if (width <= 1280) return 300;
-  return 344;
+function columnsFor(width) {
+  if (width <= 640) return 1;
+  if (width <= 1024) return 2;
+  return 3;
 }
-function gapFor(width) { return width <= 560 ? 8 : (width <= 900 ? 10 : 12); }
+function gapFor(width) { return width <= 640 ? 16 : 26; }
 
 function buildGrid(record) {
   const { gridEl, photos } = record;
-  const containerW = gridEl.clientWidth;
-  if (!containerW || !photos.length) return;
+  const W = gridEl.clientWidth;
+  if (!W || !photos.length) return;
 
-  const targetH = targetRowHeight(containerW);
-  const gap = gapFor(containerW);
-  gridEl.style.setProperty('--gap', gap + 'px');
+  const cols = columnsFor(W);
+  const gap = gapFor(W);
+  const colW = (W - gap * (cols - 1)) / cols;
 
-  // Reuse anchors if already built (resize) — else create
-  let anchors = record.anchors;
-  if (!anchors) {
-    anchors = photos.map((p, idx) => createTile(p, record, idx));
-    record.anchors = anchors;
+  // Build the figures once; reuse across relayouts (keeps reveal state).
+  let tiles = record.tiles;
+  if (!tiles) {
+    tiles = photos.map((p, idx) => createTile(p, record, idx));
+    record.tiles = tiles;
   }
 
-  // Frag of rows
+  // Distribute into balanced columns: each tile joins the currently shortest
+  // column (height estimated from aspect ratio + caption block).
+  const colEls = [];
+  const colH = new Array(cols).fill(0);
   const frag = document.createDocumentFragment();
-  let row = [];
-  let rowAspect = 0; // sum of aspect ratios (w/h)
-
-  const flushRow = (isLast) => {
-    if (!row.length) return;
-    const totalGap = gap * (row.length - 1);
-    // Solve row height so scaled widths + gaps == containerW
-    let h = (containerW - totalGap) / rowAspect;
-
-    // Clamp the final/partial row so a lone wide image never balloons
-    const clamped = isLast && h > targetH * 1.25;
-    if (clamped) h = targetH * 1.25;
-    const hh = Math.round(h);
-
-    const rowEl = document.createElement('div');
-    rowEl.className = 'grid__row';
-
-    // Round each tile width, then absorb the sub-pixel drift into the last
-    // tile of a FULL row so the right edge is pixel-flush (no ragged gap).
-    const widths = row.map((item) => Math.round(h * item.aspect));
-    if (!clamped) {
-      const used = widths.reduce((a, b) => a + b, 0) + totalGap;
-      widths[widths.length - 1] += (containerW - used);
-    }
-
-    row.forEach((item, k) => {
-      const w = widths[k];
-      const a = item.anchor;
-      a.style.width = w + 'px';
-      a.style.height = hh + 'px';
-      const img = a.querySelector('img');
-      img.setAttribute('width', w);
-      img.setAttribute('height', hh);
-      rowEl.appendChild(a);
-    });
-
-    frag.appendChild(rowEl);
-    row = [];
-    rowAspect = 0;
-  };
-
-  photos.forEach((p, idx) => {
-    const aspect = (p.w && p.h) ? (p.w / p.h) : 1.5;
-    row.push({ anchor: anchors[idx], aspect });
-    rowAspect += aspect;
-
-    // projected width at target height
-    const projected = rowAspect * targetH + gap * (row.length - 1);
-    if (projected >= containerW) flushRow(false);
+  for (let c = 0; c < cols; c++) {
+    const col = document.createElement('div');
+    col.className = 'grid__col';
+    colEls.push(col);
+    frag.appendChild(col);
+  }
+  const CAP_H = 58;
+  tiles.forEach((tile) => {
+    let m = 0;
+    for (let c = 1; c < cols; c++) if (colH[c] < colH[m]) m = c;
+    colEls[m].appendChild(tile);
+    colH[m] += colW * tile._ratio + CAP_H + gap;
   });
-  flushRow(true);
 
+  gridEl.style.setProperty('--gap', gap + 'px');
   gridEl.innerHTML = '';
   gridEl.appendChild(frag);
 }
@@ -182,43 +158,51 @@ function displayPlace(caption, place) {
 }
 
 function createTile(photo, record, idx) {
+  const place = displayPlace(photo.caption, photo.place);
+
+  const fig = document.createElement('figure');
+  fig.className = 'tile';
+  fig._ratio = (photo.w && photo.h) ? (photo.h / photo.w) : 0.7;
+
   const a = document.createElement('a');
-  a.className = 'tile';
+  a.className = 'tile__media';
   a.href = photo.full;
   a.setAttribute('data-pswp-width', photo.w || 2400);
   a.setAttribute('data-pswp-height', photo.h || 1600);
   a.setAttribute('data-caption', photo.caption || '');
+  if (place) a.setAttribute('data-place', place);
   a.setAttribute('target', '_blank');
   a.setAttribute('rel', 'noopener');
-
-  const place = displayPlace(photo.caption, photo.place);
-  if (place) a.setAttribute('data-place', place);
 
   const img = document.createElement('img');
   img.src = photo.thumb || photo.full;
   img.alt = photo.caption ? (place ? `${photo.caption}, ${place}` : photo.caption) : record.id;
   img.loading = 'lazy';
   img.decoding = 'async';
+  if (photo.w && photo.h) img.style.aspectRatio = `${photo.w} / ${photo.h}`;
   a.appendChild(img);
+  fig.appendChild(a);
 
-  if (photo.caption) {
-    const cap = document.createElement('span');
+  if (photo.caption || place) {
+    const cap = document.createElement('figcaption');
     cap.className = 'tile__cap';
-    const title = document.createElement('span');
-    title.className = 'tile__cap-title';
-    title.textContent = photo.caption;
-    cap.appendChild(title);
+    if (photo.caption) {
+      const title = document.createElement('span');
+      title.className = 'tile__cap-title';
+      title.textContent = photo.caption;
+      cap.appendChild(title);
+    }
     if (place) {
       const pl = document.createElement('span');
       pl.className = 'tile__cap-place';
       pl.textContent = place;
       cap.appendChild(pl);
     }
-    a.appendChild(cap);
+    fig.appendChild(cap);
   }
 
-  revealObserver.observe(a);
-  return a;
+  revealObserver.observe(fig);
+  return fig;
 }
 
 /* ---------------------------------------------------------
@@ -226,17 +210,21 @@ function createTile(photo, record, idx) {
    --------------------------------------------------------- */
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const revealObserver = new IntersectionObserver((entries, obs) => {
-  let stagger = 0;
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    const el = entry.target;
-    const delay = reduceMotion ? 0 : Math.min(stagger * 55, 330);
-    stagger++;
-    setTimeout(() => el.classList.add('is-in'), delay);
-    obs.unobserve(el);
-  });
-}, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+// Reveal tiles as they scroll in. Falls back to showing everything immediately
+// if IntersectionObserver is unavailable, so content is never left hidden.
+const revealObserver = ('IntersectionObserver' in window)
+  ? new IntersectionObserver((entries, obs) => {
+      let stagger = 0;
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const delay = reduceMotion ? 0 : Math.min(stagger * 55, 330);
+        stagger++;
+        setTimeout(() => el.classList.add('is-in'), delay);
+        obs.unobserve(el);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 })
+  : { observe: (el) => el.classList.add('is-in'), unobserve() {} };
 
 /* ---------------------------------------------------------
    Build all grids + debounced resize
@@ -264,12 +252,16 @@ if ('ResizeObserver' in window) {
 } else {
   window.addEventListener('resize', scheduleLayout, { passive: true });
 }
-// Belt-and-suspenders for the very first paint and the web-font swap.
-requestAnimationFrame(layoutAll);
+// Build via plain timers + events too — independent of requestAnimationFrame /
+// ResizeObserver, which some environments throttle or pause. Re-runs are cheap
+// and idempotent (tiles are cached on the record).
+layoutAll();
+setTimeout(layoutAll, 80);
+setTimeout(layoutAll, 500);
 if (document.fonts && document.fonts.ready) {
-  document.fonts.ready.then(() => requestAnimationFrame(layoutAll));
+  document.fonts.ready.then(layoutAll);
 }
-window.addEventListener('load', () => requestAnimationFrame(layoutAll));
+window.addEventListener('load', layoutAll);
 
 /* ---------------------------------------------------------
    PhotoSwipe — one lightbox per category
@@ -277,7 +269,7 @@ window.addEventListener('load', () => requestAnimationFrame(layoutAll));
 sectionRecords.forEach((record) => {
   const lightbox = new PhotoSwipeLightbox({
     gallery: '#' + 'grid-' + record.id.replace('series-', ''),
-    children: 'a.tile',
+    children: 'a.tile__media',
     pswpModule: PhotoSwipe,
     bgOpacity: 0.97,
     showHideAnimationType: reduceMotion ? 'none' : 'fade',
