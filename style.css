@@ -226,9 +226,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 .hero__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: #060607; }
 .hero__bg::before {
   content: ""; position: absolute; inset: -6%;
-  background-image: url("gallery/city/hong-kong.jpg");
-  background-size: cover; background-position: center 42%;
-  filter: saturate(.92) brightness(.82) contrast(1.02);
+  background-image: url("gallery/astronomical-phenomena/meteor.jpg");
+  background-size: cover; background-position: center 45%;
+  filter: saturate(1) brightness(.92) contrast(1.03);
   transform: scale(1.05);
   animation: heroDrift 28s ease-in-out infinite alternate;
 }
